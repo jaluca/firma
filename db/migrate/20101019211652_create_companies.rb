@@ -1,8 +1,10 @@
 class CreateCompanies < ActiveRecord::Migration
   def self.up
     create_table :companies do |t|
-          t.string :name_of_company
-          t.string   :boss 
+          t.string :name
+          t.string :boss 
+          
+          t.timestamps
     end
   end
 
