@@ -1,4 +1,6 @@
 class CompaniesController < ApplicationController
+  before_filter :load_company, :except => [:new, :index, :create]
+
   def new
     @company = Company.new
   end
@@ -13,25 +15,25 @@ class CompaniesController < ApplicationController
   end
 
   def show
-    @company = Company.find(params[:id])
   end
   
   def edit
-     @company = Company.find(params[:id])
   end
   
   def update
-     company = Company.find(params[:id])
-     company.update_attributes(params[:company])
-     redirect_to company
+     @company.update_attributes(params[:company])
+     redirect_to @company
    end
   
   def destroy
-    company = Company.find(params[:id])
-    company.destroy
+    @company.destroy
     redirect_to companies_path
   end
 
-	
+private 
+
+	def load_company
+	  @company = Company.find(params[:id])
+  end
 end
 
