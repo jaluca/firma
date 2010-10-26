@@ -7,9 +7,6 @@ class CompaniesController < ApplicationController
     Company.create(params[:company])
     redirect_to companies_path
   end
-  
-  def update
-  end
 
   def index
     @companies = Company.all
@@ -19,8 +16,19 @@ class CompaniesController < ApplicationController
     @company = Company.find(params[:id])
   end
   
+  def edit
+     @company = Company.find(params[:id])
+  end
+  
+  def update
+     company = Company.find(params[:id])
+     company.update_attributes(params[:company])
+     redirect_to company
+   end
+  
   def destroy
   end
 
 	
 end
+

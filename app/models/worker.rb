@@ -1,3 +1,3 @@
 class Worker < ActiveRecord::Base
-  belongs_to :companies
+  belongs_to :company
 end

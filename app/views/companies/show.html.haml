@@ -1,8 +1,8 @@
 %h1= @company.name
 %p= @company.boss
-
+%hr
+%h= "Pracownicy:"
 - @company.workers.each do |worker|
-    %p= worker.name
-    %p= worker.surnamename
+    %p= "#{worker.name} #{worker.surname}"
     
 %p= link_to "dodaj pracownika", new_company_worker_path(@company)

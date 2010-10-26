@@ -22,6 +22,6 @@ class WorkersController < ApplicationController
   
   def destroy
   end
-
-	
 end
+
+
