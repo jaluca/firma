@@ -2,3 +2,4 @@
 %p= f.text_field :name
 %p= f.label :boss, "Nazwisko szefa"
 %p= f.text_field :boss
+%p= f.collection_select(:line_id, Line.all, :id, :name)

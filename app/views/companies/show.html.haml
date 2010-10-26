@@ -1,12 +1,13 @@
 %h1= @company.name
 %p= @company.boss
 %hr
-%h= "Pracownicy:"
+%h2= "Pracownicy:"
 - @company.workers.each do |worker|
     %p= "#{worker.name} #{worker.surname}"
-
+%hr
+%p= @company.line.name
 %hr    
-%p= link_to "dodaj pracownika", new_company_worker_path(@company)
+%p= link_to "Dodaj pracownika", new_company_worker_path(@company)
 %p= link_to "Edytuj", edit_company_path(@company)
-%p= link_to "Usun", company_path(@company), :method => :delete
+%p= link_to "Usuń firmę", company_path(@company), :method => :delete
 %p= link_to "Wszystkie firmy", companies_path
