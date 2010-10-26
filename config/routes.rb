@@ -8,6 +8,8 @@ Firma::Application.routes.draw do
     resources :workers
   end
   
+  root :to => "companies#index"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

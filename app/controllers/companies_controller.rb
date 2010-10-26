@@ -6,8 +6,12 @@ class CompaniesController < ApplicationController
   end
   
   def create
-    Company.create(params[:company])
-    redirect_to companies_path
+    @company = Company.new(params[:company])
+    if @company.save
+      redirect_to companies_path
+    else
+      render :action => :new
+    end
   end
 
   def index
