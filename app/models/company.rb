@@ -1,3 +1,3 @@
 class Company < ActiveRecord::Base
-  has_many :workers
+  has_many :workers, :dependent => :destroy
 end

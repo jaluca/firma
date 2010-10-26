@@ -1,6 +1,7 @@
-Firma::Application.routes.draw do
-  resources :companies
-  resources :workers
+Firma::Application.routes.draw do |map|
+  map.resources :companies do |companies|
+    companies.resources :workers
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,6 @@
+- form_for [@worker.company, @worker] do |f|
+  %p= f.label :name, "Imie"
+  %p= f.text_field :name 
+  %p= f.label :surname, "Nazwisko"
+  %p= f.text_field :surname 
+  %p= f.submit "dodaj nowego pracownika"

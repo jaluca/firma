@@ -1,5 +1,10 @@
 %h2 Firmy
 
+%p= link_to "Nowa firma", new_company_path
+%hr
 - @companies.each do |company|
   %p
-    %b= company.name_of_company
+  %b= company.name
+  %p= company.boss
+  = link_to "Wiecej", company
+  %hr
