@@ -1,4 +1,5 @@
 class WorkersController < ApplicationController
+  before_filter :authenticate_user!
   def new
      @worker = Company.find(params[:company_id]).workers.new
   end

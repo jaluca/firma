@@ -1,6 +1,7 @@
 class CompaniesController < ApplicationController
   before_filter :load_company, :except => [:new, :index, :create]
-
+  before_filter :authenticate_user!
+  
   def new
     @company = Company.new
   end

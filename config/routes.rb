@@ -1,5 +1,7 @@
 Firma::Application.routes.draw do
 
+  devise_for :users, :path_names => {:registrations => "helloooo"}
+
   namespace :admin do
     resources :lines
   end
