@@ -1,11 +1,15 @@
 %h2 Firmy
 %p= link_to "Wyloguj mnie", destroy_user_session_path
-
+%hr
+- form_for @search, :url => companies_path, :html => {:method => :get} do |f|
+  = render :partial => "form2", :locals => {:f => f}
+  = f.submit "szukaj"
+%hr
 %p= link_to "Nowa firma", new_company_path
 %hr
 - @companies.each do |company|
-  %p
   %b= company.name
   %p= company.boss
   = link_to "Wiecej", company
   %hr
+%p= will_paginate @companies 

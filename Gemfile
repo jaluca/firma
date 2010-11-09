@@ -4,6 +4,12 @@ gem 'rails', '3.0.1'
 gem 'haml'
 gem 'devise'
 
+gem "meta_search"  # Last officially released gem
+# gem "meta_search", :git => "git://github.com/ernie/meta_search.git" # Track git repo
+
+gem "will_paginate", "~> 3.0.pre2"
+
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
